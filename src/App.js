@@ -1,7 +1,10 @@
+import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import useToggleText from "./components/my-toggle-action"
 
 function App() {
+  const [isOn, setIsOn] = useToggleText(true);
   return (
     <div className="App">
       <header className="App-header">
@@ -17,6 +20,7 @@ function App() {
         >
           Learn React
         </a>
+        <button onClick={() => setIsOn(!isOn)}>My BTN {`${isOn}`}</button>
       </header>
     </div>
   );
